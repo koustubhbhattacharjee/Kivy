@@ -1,0 +1,106 @@
+
+#MainWidget:
+
+#AnchorLayoutExample:
+#BoxLayoutExample:
+#GridLayoutExample:
+#WidgetsExample:
+ScrollViewExample:
+
+<ScrollViewExample@ScrollView>:
+    WidgetsExample
+
+<WidgetsExample@GridLayout>:
+    cols:3
+
+
+
+    ToggleButton:
+        background_color: 0, float(206/255), float(209/255),1
+        text: "toggle"
+        on_state: root.on_toggle_state(self)
+
+    Button:
+        background_color: 1,0,0,1
+        text:"Click here"
+        on_press: root.on_button_click(self)
+    
+    Label:
+        text: root.mytext+"\n"+root.myothertext
+        font_name: "Fonts/KGShakeitOffChunky.ttf"
+        font_size: "20dp"
+        size: self.texture_size
+
+        color: 1, .5, .5, 1
+
+
+<PageLayOutExample@PageLayout>:
+    MainWidget
+    BoxLayoutExample
+    GridLayoutExample
+
+#<ScrollViewExample@ScrollView>:
+ #   StackLayoutExample:
+  #      size_hint: 1, None
+   #     height: self.minimum_height
+
+
+<StackLayoutExample>:
+    #orientation: "rl-bt"
+
+<GridLayoutExample@GridLayout>:
+    cols: 2
+    Button:
+        text: "Man"
+    Button:
+        text: "B"
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+
+<AnchorLayoutExample>:
+    anchor_x: "left"
+    anchor_y: "top"
+    Button:
+        text: "My Render"
+        size_hint: None,.5
+        width: "200dp"
+
+
+<BoxLayoutExample>:
+    orientation: "vertical"
+    Button: 
+        text: "A"
+        size_hint: .25, None
+        #size: "100dp","60dp"
+        #width: "100dp"
+        height: "200dp"
+        pos_hint: {"x": 0.5}
+        
+    BoxLayout:
+        orientation:"horizontal"    
+        Button: 
+            text: "C"
+            size_hint:1,1
+        Button: 
+            text: "C"
+            size_hint:1,1
+        Button: 
+            text: "C"
+            size_hint:1,1
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "100dp", "100dp"
+        pos: "100dp","100dp"
+            
+    Label:
+        text: "Hello2"
+        size: "40dp","40dp"
+        pos: "300dp","300dp"
+            
+        color: 1,0,0,1
+    
+        
